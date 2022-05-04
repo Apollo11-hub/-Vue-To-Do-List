@@ -17,6 +17,7 @@ const app = new Vue({
       
     ],
 
+
   
   },
 
@@ -24,7 +25,13 @@ const app = new Vue({
     addNewItemFuncion(){
       
     
+    },
+
+    removeItemFunction(index){
+      
+      this.listOfItemsToDo.splice(index , 1)
     }
+
   },
 
 })

@@ -18,7 +18,7 @@
     <h1>ToDo APP</h1>
 
   <div class="container-text-button">
-    <input   type="text" placeholder="Inserisci il tui ToDo">
+    <input v-model=""  type="text" placeholder="Inserisci il tui ToDo">
     <button >Click</button>
   </div>
 
@@ -29,7 +29,7 @@
 
         <span :class="{'done-class' : item.done}">{{item.title}}</span>
 
-        <i class="fa-solid fa-trash-can"></i>
+        <i @click="removeItemFunction(index)" class="fa-solid fa-trash-can"></i>
         
       </li>
       
