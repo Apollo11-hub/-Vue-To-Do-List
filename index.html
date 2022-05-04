@@ -18,20 +18,22 @@
     <h1>ToDo APP</h1>
 
   <div class="container-text-button">
-    <input v-model=""  type="text" placeholder="Inserisci il tui ToDo">
-    <button >Click</button>
+    <input @keyup.13="addNewItemFuncion()" v-model.trim="textToPush"  type="text" placeholder="Inserisci il tui ToDo">
+    <button @click="addNewItemFuncion()">Click</button>
   </div>
 
   <div class="todo-list-container">
 
     <ul>
-      <li @click="item.done = !item.done" v-for="(item, index) in listOfItemsToDo">
+      <li  v-for="(item, index) in listOfItemsToDo">
 
-        <span :class="{'done-class' : item.done}">{{item.title}}</span>
-
+        <span @click="item.done = !item.done"
+        :class="{'done-class' : item.done}">{{item.title}}</span>
         <i @click="removeItemFunction(index)" class="fa-solid fa-trash-can"></i>
         
       </li>
+
+      <span  v-if="listOfItemsToDo.length == 0 ">Non Hai nulla Da fare!</span>
       
     </ul>
 

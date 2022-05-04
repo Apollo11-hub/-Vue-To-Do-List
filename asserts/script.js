@@ -8,30 +8,30 @@ const app = new Vue({
 
   data : {
 
-    listOfItemsToDo : [
+    listOfItemsToDo:[],
 
-      {
-        title: "prova",
-        done: false
-      }
-      
-    ],
-
-
+    textToPush:""
   
   },
 
   methods: {
     addNewItemFuncion(){
-      
-    
+      const newItem = 
+        {
+          title: this.textToPush,
+          done: false
+        }
+        if(this.textToPush.length > 0){
+          this.listOfItemsToDo.push(newItem)
+        }
     },
+
 
     removeItemFunction(index){
       
       this.listOfItemsToDo.splice(index , 1)
     }
 
-  },
-
+  }
+  
 })

@@ -52,6 +52,7 @@
 .todo-list-container ul li{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 0;
     border-bottom: 2px solid black ;
 }
@@ -63,9 +64,15 @@
   cursor: pointer;
 }
 
+i{
+  background-color: lightgray;
+  border-radius: 5px;
+  padding: 10px;
+}
 i:hover{
+  background-color: lightgray;
   color: white;
-  font-size: 19px;
+
 }
 
 .done-class{
